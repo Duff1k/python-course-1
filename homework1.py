@@ -19,4 +19,54 @@ SONGS = [
     ("The Less I Know The Better", "Tame Impala", "indie", "03:36"),
 ]
 
+def get_by_genre(songs, genre):
+    list_of_songs = []
+    genre_lower = genre.lower()
+    for song in songs:
+        if song[2].lower() == genre_lower:
+            list_of_songs.append(song)
+    return list_of_songs
+
+def get_by_artist(songs, artist):
+    result = []
+    artist_lower = artist.lower()
+    for song in songs:
+        if song[1].lower() == artist_lower:
+            result.append(song)
+    return result
+
+def unique_artists(songs):
+    artists = []
+    seen = set()
+    for song in songs:
+        if song[1] not in seen:
+            seen.add(song[1])
+            artists.append(song[1])
+    return artists
+
+def search_title(songs, text):
+    title_songs = []
+    text_lower = text.lower()  # Не изменяем оригинальный параметр
+    for song in songs:
+        if text_lower in song[0].lower():
+            title_songs.append(song)
+    return title_songs
+
+def top_longest(songs, n):
+    def time_to_seconds(time_str):
+        parts = time_str.split(':')
+        if len(parts) == 2:
+            return int(parts[0]) * 60 + int(parts[1])
+        return 0
+
+    return sorted(songs, key=lambda s: time_to_seconds(s[3]), reverse=True)[:n]
+
+
+
+
+print(get_by_genre(SONGS, "rock"))
+print(get_by_artist(SONGS, "Billie Eilish"))
+print(unique_artists(SONGS))
+print(search_title(SONGS, "na"))
+print( top_longest(SONGS, 3))
 
