@@ -60,5 +60,5 @@ print("Уникальные исполнители:", unique_artists(SONGS))
 text = input("Введите текст для поиска в названиях песен: ")
 print("Песни с", text, "в названии:", search_title(SONGS, text))
 
-n = int(input("Сколько самых длинных треков показать?" ))
+n = int(input("Сколько самых длинных треков показать? "))
 print("Топ -",n,"треков по длинне:", top_longest(SONGS, n))
