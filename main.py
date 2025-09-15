@@ -21,11 +21,11 @@ SONGS = [
 
 def get_by_genre(songs, genre):
     genre = genre.lower()
-    return [song for song in songs if song[2].lower() == genre]
+    return [(song[0], song[1]) for song in songs if song[2].lower() == genre]
 
 def get_by_artist(songs, artist):
     artist = artist.lower()
-    return [song for song in songs if song[1].lower() == artist]
+    return [song[0] for song in songs if song[1].lower() == artist]
 
 def unique_artists(songs):
     seen = set()
@@ -39,7 +39,7 @@ def unique_artists(songs):
 
 def search_title(songs, text):
     text = text.lower()
-    return [song for song in songs if text in song[0].lower()]
+    return [(song[0], song[1]) for song in songs if text in song[0].lower()]
 
 def top_longest(songs, n):
     def duration_to_seconds(duration):
