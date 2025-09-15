@@ -55,7 +55,7 @@ def search_title(songs, text):
     title_songs = []
     for song in songs:
         if text in song[0].lower():
-            title_songs.append(song)
+            title_songs.append(song[0])
         else:
             continue
     return title_songs
