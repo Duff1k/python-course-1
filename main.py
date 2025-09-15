@@ -49,16 +49,13 @@ def top_longest(songs, n):
     sorted_songs = sorted(songs, key=lambda x: duration_to_seconds(x[3]), reverse=True)
     return sorted_songs[:n]
 
-genre = input("Введите жанр для поиска: ")
-print("Песни жанра:", genre, ":", get_by_genre(SONGS, genre))
+genre = "pop"
+artist = "Eminem"
+text = "shape"
+n = 3
 
-artist = input("Введите исполнителя для поиска: ")
-print("Песни исполнителя:", artist, ":", get_by_artist(SONGS, artist))
-
+print("Песни жанра", genre, ":", get_by_genre(SONGS, genre))
+print("Песни исполнителя", artist, ":", get_by_artist(SONGS, artist))
 print("Уникальные исполнители:", unique_artists(SONGS))
-
-text = input("Введите текст для поиска в названиях песен: ")
 print("Песни с", text, "в названии:", search_title(SONGS, text))
-
-n = int(input("Сколько самых длинных треков показать? "))
-print("Топ -",n,"треков по длинне:", top_longest(SONGS, n))
+print("Топ -",n,"по длинне:", top_longest(SONGS, n))
