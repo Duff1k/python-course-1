@@ -27,12 +27,12 @@ def get_by_genre(SONGS, genre):
 rock_songs = get_by_genre(SONGS, "rock")
 print("LET'S ROCK:")
 for x in rock_songs:
-    print(f"{x[0]}")
+    print(x[0])
 
 indie_songs = get_by_genre(SONGS, "indie")
 print("\nFEEL THE INDIE BLAZE:")
 for x in indie_songs:
-    print(f"{x[0]}")
+    print(x[0])
 
 #Task 2: return songs by artist
 def get_by_genre(SONGS, artist):
@@ -42,7 +42,7 @@ def get_by_genre(SONGS, artist):
 artist_songs = get_by_genre(SONGS, "Imagine Dragons")
 print("\nYOU WANT DRAGONS? YOU GET DRAGONS:")
 for x in artist_songs:
-    print(f"{x[0]}")
+    print(x[0])
 
 #Task 3: return unique artists
 def unique_artists(SONGS):
@@ -54,8 +54,8 @@ def unique_artists(SONGS):
     return result
 
 artists = unique_artists(SONGS)
-print("\nARTISTS BY ORDER OF APPEARANCE :")
-print(artists)
+print("\nARTISTS BY ORDER OF APPEARANCE:")
+print("\n".join(artists))
 
 #Task 4: return songs with 'text' in the title
 def search_title(SONGS, text):
@@ -65,4 +65,4 @@ def search_title(SONGS, text):
 songs_with_text = search_title (SONGS, "text")
 print("\nRESULT:")
 for x in songs_with_text:
-    print(f"{x[0]}")
+    print(x[0])
